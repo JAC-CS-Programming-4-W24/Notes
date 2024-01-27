@@ -425,13 +425,9 @@ if the string would be convertible before actually trying to convert it.
 
 
 
-## ▶️ Exercise 1.1 - Cut
-
-Please click [here](./Exercises/1.1_Cut/README.md) to do the exercise.
-
 ## ▶️ Exercise 1.2 - Find Specific Characters in a String
 
-Please click [here](./Exercises/1.2_Find_digits_in_string/REAMDME.md) to do the exercise.
+Please click [here](./1-Input-Output-Streams/Exercises/1.2_Find_digits_in_string/REAMDME.md) to do the exercise.
 
 # Advanced
 
