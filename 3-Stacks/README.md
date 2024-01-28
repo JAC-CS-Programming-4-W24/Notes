@@ -9,7 +9,6 @@
 
 ## ↪️ Last in, First out
 
-![Speed Stacking](./images/1-Speed-Stacking.gif "Is speed stacking still a thing?")
 
 A stack is a *collection* of data. We refer to individual data items in the collection as *elements*.
 
@@ -17,7 +16,9 @@ A stack is a **LIFO** collection: the *last* element added to the stack is the *
 
 Let's draw a stack like this:
 
-![Stack diagram](./images/stack1.png)
+![Stack diagram](./images/stack1.svg)
+
+
 
 - **bottom:** the element at the "lowest" possible position in the stack.
 - **empty:** where there are no elements in the stack.
@@ -35,17 +36,18 @@ For every operation we design we will consider:
 
 ### ▶️ Exercise 3.1 - Stack Design
 
+#### Normal Operations
 Let's start by designing a stack that holds `int` values, only for now.
 
 A *push* operation adds an element to the top of the stack.
 
 A *pop* operation removes an element from the top of the stack.
 
-![Push and pop](./images/stack2.png)
+![Push and pop](./images/stack2.svg)
 
-|                                                                        |                                                                       |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Stack underflow](./images/stack4.png "Possible problem of popping.") | ![Stack overflow](./images/stack5.png "Possible problem of pushing.") |
+#### Errors
+
+![Stack underflow and overflow](./images/stack3.svg)
 
 <!-- tabs:start -->
 
@@ -96,27 +98,68 @@ A *pop* operation removes an element from the top of the stack.
 
 <!-- tabs:end -->
 
-!> "Stack exists" precondition: the existence of the object is required for all operations so we will omit it as a precondition. It will be considered incorrect on test.
+> "Stack exists" precondition: the existence of the object is required for all operations so we will omit it as a precondition. It will be considered incorrect on test.
 
 - Alternate design: `size()` and `getCapacity()`.
 
-## 🍔 APIs
+## 🍔 APIs (Application Programming Interface)
 
 You've probably heard the term "API" get thrown around in computer science. What does it mean exactly?
 
 One analogy could be ordering from a menu:
 
-![Ordering](./images/2-Ordering.gif "Never change, Big Smoke, never change.")
-
 The restaurant's menu is like its API. The menu is there to tell you what you're allowed to order at the restaurant. You can **only** order things that are listed on the menu, and **nothing else**.
 
 API = [Application Programming Interface](https://en.wikipedia.org/wiki/API)
 
-?> In contrast to a user interface, which connects a computer to a person, an application programming interface connects computers or pieces of software to each other.
+> In contrast to a user interface, which connects a computer to a person, an application programming interface connects computers or pieces of software to each other.
+> 
 
-It's in the name - **interface**! Recall that in OOP, an interface acts as a contract. The implementing class **must** override all methods included in the interface. Because of this contract-like behaviour, it means that any code (i.e. customer) that needs to use the implementing class (i.e. restaurant) knows what methods it will have due to the interface (i.e. menu).
+## Example: Performing Math on a Computer
 
-### ▶️ Exercise 3.2 - Paired Brackets
+Python allows us to easily see what its code is compiled to (byte-code).  The byte code is then executed by the python interpretor.  This is the same as Java, which compiles to byte code, which in turn is executed by the Java Virtual Machine (JVM).
+
+Python code:
+```python
+import dis
+
+def foo(x: int, y: int) -> int:
+     return 3 * (x / 5) + (y - 3)
+  
+print(dis.dis(foo))
+```
+
+What python code gets compiled to:
+```text
+              2 LOAD_CONST               1 (3)
+              4 LOAD_FAST                0 (x)
+              6 LOAD_CONST               2 (5)
+              8 BINARY_OP               11 (/)
+             12 BINARY_OP                5 (*)
+             16 LOAD_FAST                1 (y)
+             18 LOAD_CONST               1 (3)
+             20 BINARY_OP               10 (-)
+             24 BINARY_OP                0 (+)
+             28 RETURN_VALUE
+```
+
+What do these instructions do? 
+
+|Instruction |Description |
+|------------|------------|
+|`LOAD_CONST`| pushes a value onto a stack|
+|`LOAD_FAST`| gets the value of the variable|
+|`BINARY_OP`| pop two items off of the stack, perfom the operation, and push the result back onto the stack|
+|`RETURN_VALUE`| pops an item off of the stack, and returns that value to the calling program|
+
+![load and x/5](./images/stack4.svg)
+
+![load and 3*x/5](./images/stack5.svg)
+
+![load and 3*x/5](./images/stack6.svg)
+
+
+## ▶️ Exercise 3.2 - Paired Brackets
 
 Using just the Stack API, (pseudo) code a method `hasPairedBrackets` that uses a stack to determine if brackets `( )`, `{ }`, `[ ]` and `< >` are properly *paired*: each opened bracket is closed but only after subsequent opened brackets are closed.
 
@@ -127,7 +170,7 @@ If we ignore non-bracket characters, these would also be accepted:
 
 Good: `<html>`, `(a[bc]?)`, `(you (should learn (lisp)))`, etc.
 
-### ▶️ Exercise 3.3 - Stack Implementation
+## ▶️ Exercise 3.3 - Stack Implementation
 
 Please click [here](https://github.com/JAC-CS-Programming-4-W23/E3.3-Stacks) to do the exercise.
 
