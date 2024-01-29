@@ -313,7 +313,7 @@ Syntax: `str.split(sep=None, maxsplit = -1)`
 Returns a list of strings where `sep` defines the deliminator.
 * `sep` is a ***single*** character, unless
   * If `sep` is None, the deliminator defaults to any white space
-* If `maxsplit` is a positive integer, all splits will occur.
+* If `maxsplit` is a negative integer, all splits will occur.
 
 Examples of `split` may be more effective than words, so here are a lot of examples.
 
