@@ -98,7 +98,7 @@ earliest(x, y)
 
 ## ▶️ Exercise 2.1 - Comparable
 
-Please click [here](./Exercises/2_1_Comparable/README.md) to do the exercise.
+Please click [here]((./2-Comparable/Exercises/2_1_Comparable/) to do the exercise.
 
 ## 🔍 Sorting & Searching
 
@@ -141,7 +141,7 @@ def binary_search_find_index_of_value(data: list[int], value: int) -> Optional[i
 
 ## ▶️ Exercise 2.2 - Sort & Search
 
-Please click [here](https://github.com/JAC-CS-Programming-4-W23/E2.2-Sort-Search) to do the exercise.
+Please click [here](./2-Comparable/Exercises/2_2_Sort_and_Search/) to do the exercise
 
 ## 📚 References
 

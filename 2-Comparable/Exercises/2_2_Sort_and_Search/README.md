@@ -18,7 +18,6 @@ in the collection.
 
 1. Our task is to refactor the integer binary search from the notes to use our `Pokemon` comparable class instead.
    - The end goal is to `Pokemon.binary_search()` for any Pokemon that may exist in our collection.
-   - You can use the unit tests located in [`test_pokemon.py`](./test_pokemon.py) to verify that the search is working correctly.
 2. Now that we can (efficiently) search for a `Pokemon` in our collection, we want to be able to add a Pokemon from our `collection` to our `team` using the `Pokemon.add_to_team()` method.
    - The "collection" is the set of all Pokemon we might have in storage.
    - The "team" is the set of (max) 6 Pokemon that we can carry at any one point.
@@ -44,33 +43,35 @@ class PokemonNotFoundError(Exception):
 class PokemonTeamDeckOverflowError(Exception):
     """"Raised if there is an attempt to add more than six cards to your team deck"""
 
+class Comparable(Protocol):
+    """ If we want to be able to do a search, then the object collection must be comparable"""
+    def __lt__(self, other) -> bool: 
+        pass
+    def __eq__(self, other) -> bool: 
+        pass
+
+
+def binary_search(collection: list[Comparable], obj: Comparable) -> Optional[int]:
+    """
+     * An implementation of binary search with comparable objects.
+     * @param collection The list of objects to be searched
+     * @param find an object in the collection that is equal to obj
+     * @return The index of where the Pokémon resides in the collection.
+    """
+
 class Pokemon:
-    """Insert your original Pokemon class"""
-
-    # add:
-
-    @staticmethod
-    def binary_search(collection: list[Pokemon], name: str, level: int) -> Optional[int]:
-        """
-         * An implementation of binary search with comparable Pokémon objects.
-         * @param collection All the Pokémon you own.
-         * @param name The name of the Pokémon to find in the collection.
-         * @param level The level of the Pokémon to find in the collection.
-         * @return The index of where the Pokémon resides in the collection.
-        """
+    
+    # add the following method to your previous Pokemon class
 
     @staticmethod
     def add_to_team(collection: list[Pokemon], team: list[Pokemon], 
-                    name: str, level: int):
+                    card: Pokemon):
         """
         * Specifies a Pokémon to be taken from the collection and added to the team.
         * @param collection All the Pokémon you own.
         * @param team The (max) 6 Pokémon directly on you at any given time.
-        * @param name The name of the Pokémon to find in the collection.
-        * @param level The level of the Pokémon to find in the collection.
+        * @param card - a pokemon card to add to the team deck
         * @raises PokemonNotFoundError If the Pokémon cannot be found in the collection.
         * @raises PokemonTeamDeckOverflowError is you try to add more than 6 cards to your team
         """
 ```
-
-[Unit Tests](./test_pokemon.py)
