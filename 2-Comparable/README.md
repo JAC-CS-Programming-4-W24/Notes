@@ -98,7 +98,7 @@ earliest(x, y)
 
 ## ▶️ Exercise 2.1 - Comparable
 
-Please click [here]((./2-Comparable/Exercises/2_1_Comparable/) to do the exercise.
+Please click [here](./2-Comparable/Exercises/2_1_Comparable/) to do the exercise.
 
 ## 🔍 Sorting & Searching
 
