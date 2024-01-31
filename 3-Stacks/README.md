@@ -53,8 +53,8 @@ A *pop* operation removes an element from the top of the stack.
 
 ### **push**
 
-| Signature    | `void push(int element)`                |
-| ------------ | --------------------------------------- |
+| Signature    | `push(element: int)`                    |
+|--------------|-----------------------------------------|
 | Description  | Add an element to the top of the stack. |
 | Precondition | Stack is not full.                      |
 | Mutator      | Yes.                                    |
@@ -62,8 +62,8 @@ A *pop* operation removes an element from the top of the stack.
 
 ### **pop**
 
-| Signature    | `int pop()`                                      |
-| ------------ | ------------------------------------------------ |
+| Signature    | `pop() -> int`                                   |
+|--------------|--------------------------------------------------|
 | Description  | Remove an element from the stack.                |
 | Precondition | Stack is not empty.                              |
 | Mutator      | Yes.                                             |
@@ -71,8 +71,8 @@ A *pop* operation removes an element from the top of the stack.
 
 ### **top**
 
-| Signature    | `int top()`                                          |
-| ------------ | ---------------------------------------------------- |
+| Signature    | `top() -> int`                                       |
+|--------------|------------------------------------------------------|
 | Description  | Get the top element of the stack.                    |
 | Precondition | Stack is not empty.                                  |
 | Mutator      | No.                                                  |
@@ -80,27 +80,34 @@ A *pop* operation removes an element from the top of the stack.
 
 ### **isEmpty**
 
-| Signature    | `boolean isEmpty()`                              |
-| ------------ | ------------------------------------------------ |
+| Signature    | `is_empty() -> bool`                             |
+|--------------|--------------------------------------------------|
 | Description  | Check if the stack is empty.                     |
 | Precondition | None.                                            |
 | Mutator      | No.                                              |
-| Returns      | `true` if the stack is empty, `false` otherwise. |
+| Returns      | `True` if the stack is empty, `False` otherwise. |
 
 ### **isFull**
 
-| Signature    | `boolean isFull()`                              |
-| ------------ | ----------------------------------------------- |
+| Signature    | `is_full() -> bool`                             |
+|--------------|-------------------------------------------------|
 | Description  | Check if the stack is full.                     |
 | Precondition | None.                                           |
 | Mutator      | No.                                             |
-| Returns      | `true` if the stack is full, `false` otherwise. |
+| Returns      | `True` if the stack is full, `False` otherwise. |
 
 <!-- tabs:end -->
 
-> "Stack exists" precondition: the existence of the object is required for all operations so we will omit it as a precondition. It will be considered incorrect on test.
+> What about the precondition: "Stack must exist"? It seems reasonable that each operation should include this precondition. However, in an OOP language the existence of the object is required for a method to be called on that object. This code is obviously going to fail:
 
-- Alternate design: `size()` and `getCapacity()`.
+```python
+stack: IntStack = None
+stack.push(123)
+```
+
+> and will be handled already by python. Also, each and every method we design would have to include this precondition. As a result, adding existence preconditions will be considered a mistake in the design (yes, on test as well!).
+
+- Alternate design. It is possible to replace `is_empty()` and `is_full()` with two operations: `size()` and `get_capacity()`. We will focus on the above design for now, but you can work these out for yourself. How would you tell if a stack was empty or full with only these new operations? Are they more useful operations?
 
 ## 🍔 APIs (Application Programming Interface)
 
