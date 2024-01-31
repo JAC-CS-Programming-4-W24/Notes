@@ -5,7 +5,7 @@
 In this repo you will find the notes for this course.
 
 You can view the pretty version of the notes 
-[here](https://jac-cs-programming-4-w23.github.io/Notes).
+[here](https://jac-cs-programming-4-w24.github.io/Notes).
 
 ## ✒️ Course Description
 
