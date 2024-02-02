@@ -1,5 +1,5 @@
 <!-- markdownlint-disable first-line-heading -->
-
+[Coding Syle Guidelines](Guidelines)
 - [0. 🌱 Getting Started](0-Getting-Started/ "🌱 Getting Started")
   - [Intro to Python](./0-Getting-Started/Python.md) 
 - [1. 🌊 Input/Output Streams](1-Input-Output-Streams/ "🌊 Input/Output Streams")
