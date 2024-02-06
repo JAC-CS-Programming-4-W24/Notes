@@ -19,7 +19,7 @@ A queue is a **FIFO** collection: the *first* element added to the queue is the 
 
 Let's draw a queue like this:
 
-![Queue diagram](images/queue1.png)
+![Queue diagram](images/queue.svg)
 
 - **front:** the element at the first position in the queue.
 - **rear:** the element in the last position in the queue.
@@ -41,19 +41,19 @@ Again, lets only consider a collection `int` for now to keep it simple.
 
 A *enqueue* operation adds an element to the rear of the queue.
 
-![Enqueue](images/queue2.png)
+![Enqueue](images/enqueue.svg)
 
 A *dequeue* operation removes an element from the front of the queue.
 
-![Dequeue](images/queue3.png)
+![Dequeue](images/dequeue.svg)
 
 What is a possible problem: queue *underflow*.
 
-![Queue underflow](images/queue4.png)
+![Queue underflow](images/dequeue_underflow.svg)
 
 What is a possible problem: queue *overflow*.
 
-![Queue overflow](images/queue5.png)
+![Queue overflow](images/enqueue_overflow.svg)
 
 <!-- tabs:start -->
 
@@ -118,6 +118,8 @@ How do we *not* run out of space at the end of the array? Where is there space t
 - **Idea 2**: How about we let the queue "wrap" around the edges of the array. It would be as if the array we're a circle.
 
 The first idea seems easy enough to code. We will sometimes have a costly `enqueue` operation. The second idea can be confusing at first, but has the potential to be efficient for all operations!
+
+![Circular Queue](./images/circular.svg)
 
 Here is an example of a "circular" array with **idea 1** in purple and **idea 2** in blue and green:
 
