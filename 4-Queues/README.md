@@ -59,8 +59,8 @@ What is a possible problem: queue *overflow*.
 
 ### **enqueue**
 
-| Signature    | `void enqueue(int element)`                  |
-| ------------ | -------------------------------------------- |
+| Signature    | `enqueue(element: int)`                      |
+|--------------|----------------------------------------------|
 | Description  | Add an element to the **rear** of the queue. |
 | Precondition | Queue is not full.                           |
 | Mutator      | Yes.                                         |
@@ -68,8 +68,8 @@ What is a possible problem: queue *overflow*.
 
 ### **dequeue**
 
-| Signature    | `int dequeue()`                                     |
-| ------------ | --------------------------------------------------- |
+| Signature    | `dequeue() -> int`                                  |
+|--------------|-----------------------------------------------------|
 | Description  | Remove the element from the **front** of the queue. |
 | Precondition | Queue is not empty.                                 |
 | Mutator      | Yes.                                                |
@@ -77,8 +77,8 @@ What is a possible problem: queue *overflow*.
 
 ### **front**
 
-| Signature    | `int front()`                                       |
-| ------------ | --------------------------------------------------- |
+| Signature    | `front() -> int`                                    |
+|--------------|-----------------------------------------------------|
 | Description  | Get the **front** element of the queue.             |
 | Precondition | Queue is not empty.                                 |
 | Mutator      | No.                                                 |
@@ -86,8 +86,8 @@ What is a possible problem: queue *overflow*.
 
 ### **isEmpty**
 
-| Signature    | `boolean isEmpty()`                              |
-| ------------ | ------------------------------------------------ |
+| Signature    | `is_empty() -> bool`                             |
+|--------------|--------------------------------------------------|
 | Description  | Check if the queue is empty.                     |
 | Precondition | None.                                            |
 | Mutator      | No.                                              |
@@ -95,8 +95,8 @@ What is a possible problem: queue *overflow*.
 
 ### **isFull**
 
-| Signature    | `boolean isFull()`                              |
-| ------------ | ----------------------------------------------- |
+| Signature    | `is_full() -> bool`                             |
+|--------------|-------------------------------------------------|
 | Description  | Check if the queue is full.                     |
 | Precondition | None.                                           |
 | Mutator      | No.                                             |
