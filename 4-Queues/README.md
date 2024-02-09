@@ -146,11 +146,11 @@ So, lets try it without shifting the elements.  This would require keeping track
 
 Do you see any issues with this method of implementation?
 
-### ⭕️ Circular Array
+### ⭕️ Circular Array 
 
 The floating array never recuperates the available memory at the beginning of the array once it is no longer used.  So how can we use this memory space?
 
-Imagine that the array is circular (it's not, but lets pretend).
+Imagine that the array is circular (it's not, but let's pretend).
 
 > An array is never really circular. We will code our use of array indices to treat the boundary between the `0` index array and the `capacity - 1`.
 
