@@ -5,4 +5,5 @@
 - [1. 🌊 Input/Output Streams](1-Input-Output-Streams/ "🌊 Input/Output Streams")
 - [2. 🌊 Comparable](2-Comparable/ "🌊 Input/Output Streams")
 - [3. Stacks](3-Stacks/)
+- [4. Queues](4-Queues)
 
