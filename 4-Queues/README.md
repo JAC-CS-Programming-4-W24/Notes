@@ -195,7 +195,7 @@ Thus, if we have an array of size `N`, and our `rear` item is at position `n` in
 
 ### ▶️ Exercise 4.3 - Circular Queue
 
-Please click [here](https://github.com/JAC-CS-Programming-4-W23/E4.3-Circular-Queue) to do the exercise.
+Please click [here](https://github.com/JAC-CS-Programming-4-W24/Exercise-04-QueueImplementationArray/) to do the exercise.
 
 
 
