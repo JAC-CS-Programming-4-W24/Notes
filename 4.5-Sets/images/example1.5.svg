@@ -1,0 +1,46 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="520" height="65" xmlns="http://www.w3.org/2000/svg">
+
+<!-- array boxes and indices -->
+  <path d="M10 10 H 95 M 95 40 H 10 V 10" fill="transparent" stroke="black"/>
+  <path d="M50 10 V 40
+    m 40 -30 V 40
+    "
+    fill="transparent" stroke="black"/>
+
+
+  <text x="25" y="60">0
+    <tspan dx="29">1</tspan>
+  </text>
+
+  <text x="25" y="27" style="font-size:20px;">.</text>
+  <text x="65" y="27" style="font-size:20px;">.</text>
+
+  <!-- break -->
+  <path d="M 105 60 Q 95 40 105 30 T 105 0" stroke="black" fill="transparent"/>
+  <path d="M 110 60 Q 100 40 110 30 T 110 0" stroke="black" fill="transparent"/>
+
+  <path d="M115 10 H 205 M 205 40 H 115 M 120 10 V 40 M 200 10 V 40" fill="transparent" stroke="black"/>
+  <text x="130" y="30" style="font-style:italic;font-size:16px;">e
+      <tspan dx="-3" dy="2" font-size="10px">id=1234563</tspan></text>
+
+  <text x="130" y="60">1234563</text>
+
+  <!-- break -->
+  <path d="M 220 60 Q 210 40 220 30 T 220 0" stroke="black" fill="transparent"/>
+  <path d="M 215 60 Q 205 40 215 30 T 215 0" stroke="black" fill="transparent"/>
+
+  <path d="M225 10 H 315 M 315 40 H 225 M 230 10 V 40 M 310 10 V 40" fill="transparent" stroke="black"/>
+  <text x="245" y="30" style="font-style:italic;font-size:16px;">e
+      <tspan dx="-3" dy="2" font-size="10px">id=1334572</tspan></text>
+
+  <text x="245" y="60">1334572</text>
+
+  <!-- ellipses -->
+  <text x="330" y="27" style="font-size:20px;">...</text>
+
+
+
+
+</svg>

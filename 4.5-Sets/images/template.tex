@@ -1,0 +1,39 @@
+\documentclass{standalone}
+
+\usepackage{amssymb} % for \blacksquare
+\usepackage{tikz}
+\usetikzlibrary{%
+  arrows,%
+  shapes.misc,% wg. rounded rectangle
+  shapes.arrows,%
+  fit,
+  chains,%
+  matrix,%
+  positioning,% wg. " of "
+  scopes,%
+  decorations.pathmorphing,% /pgf/decoration/random steps | erste Graphik
+  decorations.pathreplacing,
+  shadows,%
+  trees,
+  shapes.multipart,
+  graphs,
+  arrows.meta,
+  calc,
+  animations,
+  backgrounds
+}
+
+\usepackage{fontspec}
+\setmainfont[BoldFont={Source Sans Pro Bold}]{Source Sans Pro}
+\setmonofont[Scale=0.85]{Fira Code}
+
+\begin{document}
+
+\newcommand{\emptyCell}[0]{$\cdot$}
+\newcommand{\tombstone}[0]{\textdagger}
+
+\begin{tikzpicture}[background rectangle/.style={fill=white}, show background rectangle]
+\input{<<<CONTENT>>>}
+\end{tikzpicture}
+
+\end{document}

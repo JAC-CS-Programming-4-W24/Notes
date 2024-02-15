@@ -1,0 +1,48 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="580" height="60" xmlns="http://www.w3.org/2000/svg">
+
+<!-- array boxes and indices -->
+  <path d="M10 10 H 530 V 40 H 10 V 10" fill="transparent" stroke="black"/>
+  <path d="M50 10 V 40
+    m 40 -30 V 40
+    m 40 -30 V 40
+    m 70 -30 V 40
+    m 70 -30 V 40
+    m 70 -30 V 40
+    m 40 -30 V 40
+    m 40 -30 V 40
+    m 70 -30 V 40
+    m 40 -30 V 40
+    "
+    fill="transparent" stroke="black"/>
+  <text x="25" y="60">0
+    <tspan dx="29">1</tspan>
+    <tspan dx="29">2</tspan>
+    <tspan dx="40">3</tspan>
+    <tspan dx="57">4</tspan>
+    <tspan dx="57">5</tspan>
+    <tspan dx="45">6</tspan>
+    <tspan dx="29">7</tspan>
+    <tspan dx="40">8</tspan>
+    <tspan dx="45">9</tspan>
+  </text>
+
+<!-- text inside array -->
+
+  <text x="25" y="27" style="font-size:20px;">.</text>
+  <text x="65" y="27" style="font-size:20px;">.</text>
+  <text x="105" y="27" style="font-size:20px;">.</text>
+  <text x="140" y="30" style="font-style:italic;font-size:16px;">e
+      <tspan dx="-3" dy="2" font-size="10px">id=12343</tspan></text>
+  <text x="208" y="30" style="font-style:italic;font-size:16px;">e
+      <tspan dx="-3" dy="2" font-size="10px">id=11314</tspan></text>
+  <text x="280" y="30" style="font-style:italic;font-size:16px;">e
+      <tspan dx="-3" dy="2" font-size="10px">id=13345</tspan></text>
+  <text x="355" y="27" style="font-size:20px;">.</text>
+  <text x="395" y="27" style="font-size:20px;">.</text>
+  <text x="430" y="30" style="font-style:italic;font-size:16px;">e
+      <tspan dx="-3" dy="2" font-size="10px">id=12128</tspan></text>
+  <text x="505" y="27" style="font-size:20px;">.</text>
+
+</svg>
