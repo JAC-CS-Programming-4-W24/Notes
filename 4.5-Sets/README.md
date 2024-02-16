@@ -14,7 +14,7 @@ In other words a *set* is a collection of **distinct** elements.
 
 ## Sets in Computer Science
 
-In computer program, sets are represented by a collection of objects.   For each `object`, there must be some identifying feature that distinguishes one `object` from another, which ensures that each object in the set is *unique*.
+In computer program, sets are represented by a collection of elements.   For each `element`, there must be some identifying feature that distinguishes one `element` from another, which ensures that each element in the set is *unique*.
 
 In this discussion, the elements in our sets will be `objects` that have a property `id` which is unique to each object.
 
@@ -80,43 +80,43 @@ Determine if the set is empty ($\{\}$) or full.
 This specification uses a type parameter `T`.
 
 
-| `contains`   |                                                              |
-| ------------ | ------------------------------------------------------------ |
-| Description  | Determine if the set contains a specific element.            |
-| Signature    | `contains(element: T) -> bool`                               |
-| Precondition | There must be an agreed upon method to determine the uniqueness of each element. |
-| Mutator      | No.                                                          |
-| Returns      | If the element is found in the set that equals `element`, then returns `true`, otherwise, the method returns `false`. |
+| `contains`   |                                                                                                                       |
+|--------------|-----------------------------------------------------------------------------------------------------------------------|
+| Description  | Determine if the set contains a specific element.                                                                     |
+| Signature    | `__contains__(element: T) -> bool`                                                                                    |
+| Precondition | There must be an agreed upon method to determine the uniqueness of each element.                                      |
+| Mutator      | No.                                                                                                                   |
+| Returns      | If the element is found in the set that equals `element`, then returns `True`, otherwise, the method returns `False`. |
 
-| `contains_all` |                                                              |
-| -------------- | ------------------------------------------------------------ |
-| Description    | Determine if the set contains all the elements of the provided set, or, that the provided set is a subset of the current set. |
-| Signature      | `contains_all(rhs: set[T]) -> bool`                          |
-| Precondition   | There must be an agreed upon method to determine the uniqueness of each element. |
-| Mutator        | No.                                                          |
-| Returns        | Returns `true` if all the elements of `rhs` are in the current set, `false` otherwise. If the provided set is empty, return `true`. |
+| `contains_all` |                                                                                                                                     |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Description    | Determine if the set contains all the elements of the provided set, or, that the provided set is a subset of the current set.       |
+| Signature      | `contains_all(other: Set[T]) -> bool`                                                                                               |
+| Precondition   | There must be an agreed upon method to determine the uniqueness of each element.                                                    |
+| Mutator        | No.                                                                                                                                 |
+| Returns        | Returns `True` if all the elements of `rhs` are in the current set, `False` otherwise. If the provided set is empty, return `True`. |
 
-| `add`        |                                                              |
-| ------------ | ------------------------------------------------------------ |
+| `add`        |                                                                                                                                                                  |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Description  | Add an element into the set. If there is no element in the set that equals `element`, then the element is inserted into the set, otherwise the set is unchanged. |
-| Signature    | `add(element: T) -> bool `                                   |
-| Precondition | There must be an agreed upon method to determine the uniqueness of each element. |
-| Mutator      | Yes.                                                         |
-| Returns      | The method returns `true` if the element is added to the set, and `false` otherwise. |
-|              |                                                              |
+| Signature    | `add(element: T) -> bool`                                                                                                                                       |
+| Precondition | There must be an agreed upon method to determine the uniqueness of each element.                                                                                 |
+| Mutator      | Yes.                                                                                                                                                             |
+| Returns      | The method returns `True` if the element is added to the set, and `False` otherwise.                                                                             |
+|              |                                                                                                                                                                  |
 
-| `remove`          |       |
-|--------------|-------|
-| Description  | Remove an element from the set. If there is an element in the set equal to `element`, then it is removed from the set. Otherwise, the set is unchanged.     |
-| Signature    | `boolean remove(rhs: set[T]) -> bool` |
-| Precondition | There must be an agreed upon method to determine the uniqueness of each element. |
-| Mutator      | No.   |
-| Returns      |  The method returns `true` if the element is removed from the set, and `false` otherwise.   |
+| `remove`     |                                                                                                                                                         |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description  | Remove an element from the set. If there is an element in the set equal to `element`, then it is removed from the set. Otherwise, the set is unchanged. |
+| Signature    | `remove(element: T) -> bool`                                                                                                                            |
+| Precondition | There must be an agreed upon method to determine the uniqueness of each element.                                                                        |
+| Mutator      | No.                                                                                                                                                     |
+| Returns      | The method returns `True` if the element is removed from the set, and `False` otherwise.                                                                |
 
-| `size`       |                                              |
-| ------------ | -------------------------------------------- |
+| `length`     |                                              |
+|--------------|----------------------------------------------|
 | Description  | Determine the number of elements in the set. |
-| Signature    | `size() -> int`                              |
+| Signature    | `__len__() -> int`                           |
 | Precondition | None.                                        |
 | Mutator      | No.                                          |
 | Returns      | Returns the number of elements in the set.   |
@@ -127,25 +127,25 @@ This specification uses a type parameter `T`.
 | Signature    | `is_empty() -> bool`                                   |
 | Precondition | None.                                                  |
 | Mutator      | No.                                                    |
-| Returns      | Returns `true` if the set is empty, `false` otherwise. |
+| Returns      | Returns `True` if the set is empty, `False` otherwise. |
 
-| `is_full`    |                                                              |
-| ------------ | ------------------------------------------------------------ |
+| `is_full`    |                                                                                          |
+|--------------|------------------------------------------------------------------------------------------|
 | Description  | Determines if the set is full (i.e. there is no more space to store additional elements) |
-| Signature    | `is_full() -> bool`                                          |
-| Precondition | None.                                                        |
-| Mutator      | No.                                                          |
-| Returns      | Returns `true` if the set is full, `false` otherwise.        |
+| Signature    | `is_full() -> bool`                                                                      |
+| Precondition | None.                                                                                    |
+| Mutator      | No.                                                                                      |
+| Returns      | Returns `True` if the set is full, `False` otherwise.                                    |
 
-| `__str__()`    |                                                              |
-| -------------- | ------------------------------------------------------------ |
-| Signature      | `__str__()`                                                  |
-| Description    | Get a `String` representation of the set.                    |
-| Pre-conditions | None.                                                        |
-| Returns        | Returns a `String` representation of the set, consisting of: |
-|                | -   a `{`,                                                   |
-|                | -   the `String` representations of the elements, comma-separated, and |
-|                | -   a `}`.                                                   |
+| `__str__()`    |                                                                        |
+|----------------|------------------------------------------------------------------------|
+| Signature      | `__str__()`                                                            |
+| Description    | Get a string representation of the set.                                |
+| Pre-conditions | None.                                                                  |
+| Returns        | Returns a string representation of the set, consisting of:             |
+|                | -   a `{`,                                                             |
+|                | -   the string representations of the elements, comma-separated, and |
+|                | -   a `}`.                                                             |
 
 # An Array Implementation of Set
 
