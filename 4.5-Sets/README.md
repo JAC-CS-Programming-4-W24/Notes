@@ -26,7 +26,8 @@ The fundamental operation *contains* (a.k.a.: member, usually denoted by $\in$) 
 if an element is contained within it:
 
 $$
-a \in \{a, b, c\} \hspace{1cm} c \not\in \{a, b \}
+a \in {a, b, c}
+c \not\in {a, b}
 $$
 
 #### Contains all
