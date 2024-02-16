@@ -14,27 +14,26 @@ For example the traversal of $\{ "a", "b", "c" \}$ will be: first "a", then "b",
 Traversals are used to "loop" over the data type. For example, if `my_collection` is a traversable collection of elements then we can write the following:
 
 ```python
+from typing import Iterable, Iterator
+
 collection: Iterable = MyCollectionClass()
-collection_iter = iter(collection)
-while True
-	try:
-   	s = collection_iter.__next__()
-   	print(s)
-  except StopIteration:
-  	break
-  	
+collection_iter: Iterator = iter(collection)
+while True:
+    try:
+        s = collection_iter.__next__()
+        print(s)
+    except StopIteration:
+        break
+
 # the above is equivalent to:
 for s in collection:
-	print(s)
-	
+    print(s)
 ```
 
-### Iterable API
-In python, an iterable is an object which allows the traversal of data.  
 
-For an object to be `iterable`, it must have a method `__iter__` which returns an `iterator`.  In some cases, an `iterable` is also an `iterator`.
+## Iterator API
 
-## Iterable API
+In python, an `iterator` is an object that will traverse a series of elements.  An `iterator` must *also* be `iterable`.
 
 | `__iter__`   |                                                                     |
 |--------------|---------------------------------------------------------------------|
@@ -43,12 +42,6 @@ For an object to be `iterable`, it must have a method `__iter__` which returns a
 | Precondition | None                                                                |
 | Mutator      | Yes, but only internals which keep track of which element is 'next' |
 | Returns      | an `Iterator` object                                                |
-
-For now, we will be writing iterator classes that are themselves iterators, so `__iter__` will return `self`.
-
-## Iterator API
-
-In python, an `iterator` is an object that will traverse a series of elements.  An `iterator` must *also* be `iterable`.
 
 
 | `__next__`   |                                                                                                                                  |
@@ -63,6 +56,8 @@ In python, an `iterator` is an object that will traverse a series of elements.  
 ## Range
 
 ```python
+from typing import Iterator
+
 class Range:
     """A range of integers from low (inclusive) to high (exclusive)."""
 
@@ -83,7 +78,7 @@ class Range:
         return tmp
 
     def __str__(self):
-        return f"[{self.low}, {self.high}["
+        return f"[{self.low}, {self.high}]"
 
 ```
 
