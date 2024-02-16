@@ -1,50 +1,77 @@
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="620" height="60" xmlns="http://www.w3.org/2000/svg" style="background-color:white">
 
-<svg width="600" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- 0 -->
+  <g transform="translate(10,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">0</text>
+  </g>
 
-<!-- array boxes and indices -->
-  <path d="M10 10 H 510 V 40 H 10 V 10" fill="transparent" stroke="black"/>
-  <path d="M60 10 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    m 50 -30 V 40
-    "
-    fill="transparent" stroke="black"/>
-  <text x="27" y="60">0
-    <tspan dx="45">1</tspan>
-    <tspan dx="35">2</tspan>
-    <tspan dx="36">3</tspan>
-    <tspan dx="36">4</tspan>
-    <tspan dx="40">5</tspan>
-    <tspan dx="40">6</tspan>
-    <tspan dx="38">7</tspan>
-    <tspan dx="38">8</tspan>
-    <tspan dx="38">9</tspan>
-  </text>
+  <!-- 1 -->
+  <g transform="translate(70,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">1</text>
+  </g>
 
-<!-- text inside array -->
+  <!-- 2 -->
+  <g transform="translate(130,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">2</text>
+  </g>
 
-  <text x="25" y="27" style="font-size:20px;">.</text>
-  <text x="75" y="27" style="font-size:20px;">.</text>
-  <text x="135" y="27" style="font-size:20px;">.</text>
-  <text x="170" y="30" style="font-style:italic;font-size:16px;">e
-      <tspan dx="-3" dy="2" font-size="10px">id=3</tspan></text>
-  <text x="235" y="27" style="font-size:20px;">.</text>
-  <text x="270" y="30" style="font-style:italic;font-size:16px;">e
-      <tspan dx="-3" dy="2" font-size="10px">id=5</tspan></text>
+  <!-- 3 -->
+  <g transform="translate(190,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=3</tspan></text>
+    <text x="30" y="45" text-anchor="middle">3</text>
+  </g>
 
-  <text x="315" y="30" style="font-style:italic;font-size:18px;" font-weight="bold">e
-      <tspan dx="-5" dy="2" font-size="10px">id=15</tspan></text>
+  <!-- 4 -->
+  <g transform="translate(250,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">4</text>
+  </g>
 
-  <text x="380" y="27" style="font-size:20px;">.</text>
-  <text x="420" y="30" style="font-style:italic;font-size:16px;">e
-      <tspan dx="-3" dy="2" font-size="10px">id=8</tspan></text>
-  <text x="480" y="27" style="font-size:20px;">.</text>
+  <!-- 5 -->
+  <g transform="translate(310,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=5</tspan></text>
+    <text x="30" y="45" text-anchor="middle">5</text>
+  </g>
 
+  <!-- 6 -->
+  <g transform="translate(370,10)">
+    <rect width="60" height="30"  fill="lightgray" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=15</tspan></text>
+    <text x="30" y="45" text-anchor="middle">6</text>
+  </g>
+
+  <!-- 7 -->
+  <g transform="translate(430,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=7</tspan></text>
+    <text x="30" y="45" text-anchor="middle">7</text>
+  </g>
+
+  <!-- 8 -->
+  <g transform="translate(490,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">8</text>
+  </g>
+
+  <!-- 9 -->
+  <g transform="translate(550,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=9</tspan></text>
+    <text x="30" y="45" text-anchor="middle">9</text>
+  </g>
 </svg>

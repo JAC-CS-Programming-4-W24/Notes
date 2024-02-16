@@ -1,46 +1,68 @@
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="620" height="60" xmlns="http://www.w3.org/2000/svg" style="background-color:white">
 
-<svg width="520" height="65" xmlns="http://www.w3.org/2000/svg">
+  <!-- 0 -->
+  <g transform="translate(10,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">0</text>
+  </g>
 
-<!-- array boxes and indices -->
-  <path d="M10 10 H 95 M 95 40 H 10 V 10" fill="transparent" stroke="black"/>
-  <path d="M50 10 V 40
-    m 40 -30 V 40
-    "
-    fill="transparent" stroke="black"/>
+  <!-- 1 -->
+  <g transform="translate(70,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">.</text>
+    <text x="30" y="45" text-anchor="middle">1</text>
+  </g>
+
+  <!-- ... -->
+  <g transform="translate(130,10)">
+    <path d="M 0 0 H 10 M 0 30 H 10 M 50 0 H 60 M 50 30 H 60 " fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">...</text>
+  </g>
+
+  <!-- 11314 -->
+  <g transform="translate(190,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=11314</tspan></text>
+    <text x="30" y="45" text-anchor="middle">11314</text>
+  </g>
+
+  <!-- ... -->
+  <g transform="translate(250,10)">
+    <path d="M 0 0 H 10 M 0 30 H 10 M 50 0 H 60 M 50 30 H 60 " fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">...</text>
+  </g>
+
+  <!-- 12128 -->
+  <g transform="translate(310,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=12128</tspan></text>
+    <text x="30" y="45" text-anchor="middle">12128</text>
+  </g>
+
+  <!-- ... -->
+  <g transform="translate(370,10)">
+    <path d="M 0 0 H 10 M 0 30 H 10 M 50 0 H 60 M 50 30 H 60 " fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">...</text>
+  </g>
 
 
-  <text x="25" y="60">0
-    <tspan dx="29">1</tspan>
-  </text>
-
-  <text x="25" y="27" style="font-size:20px;">.</text>
-  <text x="65" y="27" style="font-size:20px;">.</text>
-
-  <!-- break -->
-  <path d="M 105 60 Q 95 40 105 30 T 105 0" stroke="black" fill="transparent"/>
-  <path d="M 110 60 Q 100 40 110 30 T 110 0" stroke="black" fill="transparent"/>
-
-  <path d="M115 10 H 205 M 205 40 H 115 M 120 10 V 40 M 200 10 V 40" fill="transparent" stroke="black"/>
-  <text x="130" y="30" style="font-style:italic;font-size:16px;">e
-      <tspan dx="-3" dy="2" font-size="10px">id=1234563</tspan></text>
-
-  <text x="130" y="60">1234563</text>
-
-  <!-- break -->
-  <path d="M 220 60 Q 210 40 220 30 T 220 0" stroke="black" fill="transparent"/>
-  <path d="M 215 60 Q 205 40 215 30 T 215 0" stroke="black" fill="transparent"/>
-
-  <path d="M225 10 H 315 M 315 40 H 225 M 230 10 V 40 M 310 10 V 40" fill="transparent" stroke="black"/>
-  <text x="245" y="30" style="font-style:italic;font-size:16px;">e
-      <tspan dx="-3" dy="2" font-size="10px">id=1334572</tspan></text>
-
-  <text x="245" y="60">1334572</text>
-
-  <!-- ellipses -->
-  <text x="330" y="27" style="font-size:20px;">...</text>
+  <!-- 12343 -->
+  <g transform="translate(430,10)">
+    <rect width="60" height="30"  fill="transparent" stroke="black"/>
+    <text x="30" y="15" style="font-style:italic;font-size:16px;" text-anchor="middle" dominant-baseline="middle">e
+        <tspan dx="-3" dy="8" font-size="10px">id=12343</tspan></text>
+    <text x="30" y="45" text-anchor="middle">12343</text>
+  </g>
 
 
+  <!-- ... -->
+  <g transform="translate(490,10)">
+    <path d="M 0 0 H 10 M 0 30 H 10 " fill="transparent" stroke="black"/>
+    <text x="30" y="15" text-anchor="middle" dominant-baseline="middle">...</text>
+  </g>
 
 
 </svg>

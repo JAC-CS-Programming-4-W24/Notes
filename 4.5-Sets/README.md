@@ -39,8 +39,9 @@ $$
 \{a, c\} \subseteq \{a, b, c, d\}  \hspace{1cm}  \{b, d\} \not\subseteq \{a, b, c\}
 $$
 
-A more formal definition of subset is: for all $x$, if $x \in A$ then
-$x \in B$.
+A more formal definition of subset is: 
+
+​	for all $x$, if $x \in A$ then $x \in B$.
 
 #### Add
 
@@ -221,12 +222,7 @@ up in cell 8:
 
 ![Collision example 1](images/collision3.svg)
 
-Example 2: A collision can happen at the end of the array. Again, if we have set:
-
-![Collision example 2](images/collision4.svg)
-
-and we add element $e_{\mathsf{id}=19}$, we "wrap" around and place it at the beginning of the
-array:
+Example 2: A collision can happen at the end of the array. Again, if we add element $e_{\mathsf{id}=19}$, we "wrap" around and place it at the beginning of the array:
 
 ![Collision example 2](images/collision5.svg)
 
@@ -251,8 +247,7 @@ A tombstone will be left in cells where element has been removed:
 
 ![Remove example](images/remove3.svg)
 
-When searching for an element, tombstones should be passed over to find
-elements on the other side!
+When searching for an element, tombstones should be passed over to find elements on the other side!
 
 Tombstones might eventually be replaced when adding a new element to the
 set. For example, in the previous set, if we add the element
