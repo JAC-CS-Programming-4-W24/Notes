@@ -265,6 +265,8 @@ For example, cleaning the tombstones from:
 
 ![Clean example 1](images/clean1.svg)
 
+![Clean example 1](images/clean1_old.svg)
+
 will result in:
 
 ![Clean example 2](images/clean2.svg)
@@ -278,7 +280,7 @@ implementation is entirely correct.
 
 # Submission
 
-Implement your solution in Java as an IntelliJ project.
+Implement your solution in Python.
 
 Submit using Git by following the instructions (in `assignments` directory on the GitHub
 repository).
