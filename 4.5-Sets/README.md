@@ -106,13 +106,13 @@ This specification uses a type parameter `T`.
 | Returns      | The method returns `True` if the element is added to the set, and `False` otherwise.                                                                             |
 |              |                                                                                                                                                                  |
 
-| `remove`     |                                                                                                                                                         |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Description  | Remove an element from the set. If there is an element in the set equal to `element`, then it is removed from the set. Otherwise, the set is unchanged. |
-| Signature    | `remove(element: T) -> bool`                                                                                                                            |
-| Precondition | There must be an agreed upon method to determine the uniqueness of each element.                                                                        |
-| Mutator      | No.                                                                                                                                                     |
-| Returns      | The method returns `True` if the element is removed from the set, and `False` otherwise.                                                                |
+| `remove`     |                                                                                                                                                           |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description  | Remove an element from the set. If there is an element in the set equal to `element`, then it is removed from the set. Otherwise, a `KeyError` is raised. |
+| Signature    | `remove(element: T)`                                                                                                                                      |
+| Precondition | There must be an agreed upon method to determine the uniqueness of each element.                                                                          |
+| Mutator      | No.                                                                                                                                                       |
+| Returns      | None.                                                                                                                                                     |
 
 | `length`     |                                              |
 |--------------|----------------------------------------------|
@@ -273,19 +273,31 @@ will result in:
 
 # Starter and Unit tests
 
-Use the provided starter to implement the class `IdSet<T>` as it is setup. It uses the class `Cell<T>` and the enum `State` to store information about the contents of the array.
+Use the provided starter to implement the class `IdSet[S]` as it is set up. It uses the class
+`Cell[T]` and the enum `State` to store information about the contents of the array.
 
-The unit tests in `TestIdSet` are provided to check your progress, but does not guarantee that your
+The unit tests in `test_id_set.py` are provided to check your progress, but does not guarantee that your
 implementation is entirely correct.
 
-# Submission
+## Restrictions:
 
-Implement your solution in Python.
+* Elements must be stored in an array using `our_array.py`, not a list or any other data structure
+  (It's a learning process :) ).
+ 
+## Marking Criteria
 
-Submit using Git by following the instructions (in `assignments` directory on the GitHub
-repository).
+### Code Quality
+*    Type hinting is an ABSOLUTE requirement!
+*    Decent comments
+*    Function documentation
+*    Follow the guidelines in the student notes [GuideLines](https://jac-cs-programming-4-w24.github.io/Notes/#/GuideLines)
 
-## Style
+### Functionality
+*    ID-set operations must work as described here.
 
-Your program should be clear and well commented. It must follow the "420-4P6 Style Checklist" (in
-`assignments` directory on the GitHub repository).
+
+# Submission 
+
+On LEA, submit a `.txt` file with the commit ID of your submission.`
+
+
