@@ -149,3 +149,4 @@ This specification uses a type parameter `T`.
 |                | -   the string representations of the elements, comma-separated, and |
 |                | -   a `}`.                                                             |
 
+[Exercise](https://github.com/JAC-CS-Programming-4-W24/Exercise-04.5-UsingSets/blob/main/main.py)
