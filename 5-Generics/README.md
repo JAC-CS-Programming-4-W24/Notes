@@ -68,15 +68,15 @@ class Pair:
         return f"({self.first}, {self.second})"
 ```
 
-It works, but the downside is the loss of type hints and the consequences we discussed earlier in the course. For example: we can now make arbitrary pairs:
+It works, but the downside is the loss of type hints and the consequences we discussed earlier in the course. For example, we can now make pairs of different types of data:
 
 ```python
-pair: Pair = Pair(1, "abc")  # no error first and second of different type
+pair: Pair = Pair(1, "abc")  # no error even if first and second are different types
 ```
 
 This might sound useful in some circumstances, and so there's a data type called `tuple` that does just that. 
 
-By the way, our "pair" here is called a *homogeneous* pair since the two elements are the same type. The `tuple` would be called a *heterogeneous* pair. 
+By the way, our original "pair" is called *homogeneous* since the two elements have same type. The `tuple` would be called a *heterogeneous* pair. 
 
 ## Type variables
 
@@ -116,13 +116,15 @@ There are a few differences:
 2. We declare that `Pair` is `Generic[T]`, that is has a type variable `T`. Think of *generic* as a *general purpose* version of our class.
 3. We use the variable `T` wherever we would have used `int` or `str` in the previous versions. This will be how the type checker will figure out what constrains the creation of pairs.
 
-To use this *generic* pair we need to tell the type checker what flavour of pair it is by providing a type *argument* for `T`. We do this when we declare a variable (or parameter), with a syntax you are likely familiar with:
+To use this *generic* pair we need to tell the type checker what flavour of pair it is by providing a type *argument* for `T`. We do this when we declare a variable (or parameter) of our generic data type. The syntax is something you are likely familiar with:
 
 
 ```python
 point_2d: Pair[int] = Pair(3, 4)
 user_pass: Pair[str] = StrPair("foo", "abc123")
 ```
+
+The type inside the square brackets `[int]` (or `[str]`) is the type argument that is assigned to the type parameter `T` for that specific pair. 
 
 So what would happen if tried the 
 
@@ -132,8 +134,6 @@ pair2: Pair[str] = Pair(1, "abc")  # error first is an int
 ```
 
 Note: this second line gets a slightly different error message in pycharm, but it's fundamentally a violation of the constraint that the two parameters must be strings.
-
-
 
 ## ▶️ Exercises
 
@@ -156,52 +156,50 @@ t: Tuple[str, int] = Tuple("abc", 123)
 
 ### `count()`
 
-Code a generic method `count` that takes an array and a value and returns the number of times that value occurs withing the array.
+Code a *generic* function `count` that takes an list and a value and returns the number of times that value occurs within the list.
 
 Are there any method preconditions?
 
+### `split_at()`
 
-### `splitAt()`
-
-Code a generic method `splitAt` that take in an array and position `pos` and returns a pair of arrays. The first component of the pair is the array values from indices $[0, pos-1]$ and the second component is $[pos, length-1]$.
+Code a *generic* function `split_at` that take in a list and position `pos` and returns a pair of lists. The first component of the pair is the list values from indices $[0, pos-1]$ and the second component is $[pos, length-1]$.
 
 Are there any method preconditions?
 
 ### `zip()`
 
-Code a generic method `zip` that takes in two arrays and returns a single array with the elements at each indice "paired". For example:
+Code a *generic* function `zip` that takes in two lists and returns a single list with the elements at each indice "paired". For example:
 
 ```text
-zip([a,b,c,d], [e,f,g,h]) = [(a,e), (b,f), (c,g), (d,h)]
+zip([1,2,3,4], [5,6,7,8]) = [(1,5), (2,6), (3,7), (4,8)]
 ```
 
 Are there any method preconditions?
 
+Here's an example of how `zip` could be used:
 
-### Identifying Type Variables
+```python
+for pair in zip(["a", "b", "c", "d"], ["e", "f", "g", "h"]):
+    print(pair)
+```
 
-Type-level variables are "assigned" type-level values (i.e.: types) during compilation.
+> Check out python's built-in function `zip`. It uses iterables (traversals) instead of lists. 
 
-What is the type variables (`???`) in the follow code snippet:
 
-```java
-String input = "and now for something completely different";
-String[] words = input.split(" ");
+### Exercise: Identifying Type Arguments
 
-Utility.swap(words, 0, words.length-1);   // T = ???
+Type parameters are "assigned" types when your code is type checked. In the case of methods and functions this is automatic, so it can be good to think a little bit about what `T` might be for some of your code.
 
-Integer[] counts = new Integer[words.length];
-Integer[] firsts = new Integer[words.length];
+What are the types assigned to variables (`?`) in the follow code snippet:
 
-for(int i = 0; i < words.length; i++) {
-    counts[i] = Utility.count(words, words[i]);  // T = ???
-    firsts[i] = Utility.find(words, words[i]);   // T = ???
-}
+```python
+data1: list[?] = "and now for something completely different".split(" ")
 
-Pair<???>[] tmp = Utility.zip(counts, firsts);  // T = ???
-Tuple<???, ???>[] stats = Utility.zipT(words, tmp); // T = ???, S = ???
+print(count(data1, "something"))   # in count: T = ?
 
-System.out.println(Arrays.toString(stats));
+data2: Pair[?] = split_at(data1, 3)  # in split_at: T = ?
+
+data3: list[?] = zip([0, 1, 2, 3, 4, 5], data1)  # in zip T = ? 
 ```
 
 ## ⚖️ Generic Interfaces
