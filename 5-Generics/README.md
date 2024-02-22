@@ -1,88 +1,158 @@
 # 🎭 Generics
 
+> Generic classes and functions are reusable code that still allows the checking of data types.
+
 ## 🎯 Objectives
 
-- **Explain** generic types in Java.
+- **Explain** generic types in python.
 - **Write** utility functions that use generics to make them type agnostic.
 
-## 🐺 The Shapeshifter
+## Motivation
 
-We know when declaring a variable in Java, we must specify a type:
+Here is a very general-purpose way to represent data that contains two integers, called a "pair":
 
-```java
-class Foo {
-    private int element;
-}
+```python
+class IntPair:
+
+    def __init__(self, first: int, second: int):
+        self.first: int = first
+        self.second: int = second
+
+    def __str__(self):
+        return f"({self.first}, {self.second})"
 ```
 
-This helps us know what type the value inside the variable is. However, sometimes we want to write a class whose variable types will be determined by the person who instantiates the class. Enter, the generic type.
+Here are some examples of how we could use this:
 
-![Encanto](./Encanto.gif "Generics can transform into any data type!")
-
-```java
-class Foo<T> {
-    private T element;
-}
+```python
+point_2d: IntPair = IntPair(3, 4)
+student_grade: IntPair = IntPair(123456, 76)
+energy_gold: IntPair = IntPair(3, 25)
 ```
 
-You can think of the generic type `T` as shapeshifter - it can take on any form! In the first example, `element` was forced to be of type `int`. Now that it is generic, it can be any type the user deems it to be:
+Note: most of the time you will want to represent pairs like these as classes in their own right, but every so often we need to pair data temporarily as part of an algorithm.
 
-```java
-class Foo<T> {
-    private T element;
-}
+It would also be reasonable to have pairs of other things, strings for example:
 
-Foo<Integer> foo1 = new Foo();
-Foo<String> foo2 = new Foo();
-Foo<Boolean> foo3 = new Foo();
-Foo<Pokemon> foo4 = new Foo();
+```python
+user_pass: StrPair = StrPair("foo", "abc123")
+title_album: StrPair = StrPair("Miles Davis", "Kind of Blue")
 ```
 
-At runtime, all of the instances of `T` will turn into the type that was specified when the object was instantiated.
+What does `StrPair` look like? 
+
+```python
+class StrPair:
+
+    def __init__(self, first: str, second: str):
+        self.first: str = first
+        self.second: str = second
+
+    def __str__(self):
+        return f"({self.first}, {self.second})"
+```
+
+Notice that the only difference in these two versions is the type annotations. Can we combine these into a single class? 
+
+## No typing!
+
+One option in python is to simply remove the types altogether. Something like:
+
+```python
+class Pair:
+    def __init__(self, first, second):
+        self.first = first
+        self.second = second
+
+    def __str__(self):
+        return f"({self.first}, {self.second})"
+```
+
+It works, but the downside is the loss of type hints and the consequences we discussed earlier in the course. For example: we can now make arbitrary pairs:
+
+```python
+pair: Pair = Pair(1, "abc")  # no error first and second of different type
+```
+
+This might sound useful in some circumstances, and so there's a data type called `tuple` that does just that. 
+
+By the way, our "pair" here is called a *homogeneous* pair since the two elements are the same type. The `tuple` would be called a *heterogeneous* pair. 
+
+## Type variables
+
+There is a way to have both a single class and not lose restriction that the pair elements have same type. We can use a *type variable*. Type variables are variables that are assigned types instead of the usual data values. 
+
+Here is how we create a type variable in python:
+
+```python
+T = TypeVar('T')
+```
+
+Don't worry about why `TypeVar` has a string argument, just think `T` is a new variable, but unlike the variables we're used to, `T` will store things like `int`, `str`, `TextIO`, etc... Yes, it is usual to name type variables with a single uppercase character. We will mostly use `T` and `S` but every so often we use different letters (ex: `K` and `V` for *key-value* data types).
+
+> We don't assign type to type variables the way we do with normal variables, as you'll see soon enough.
+
+## Generic pairs
+
+Let's use a type parameter to make a generic pair:
+
+```python
+T = TypeVar("T")
+
+
+class Pair(Generic[T]):
+
+    def __init__(self, first: T, second: T):
+        self.first: T = first
+        self.second: T = second
+
+    def __str__(self):
+        return f"({self.first}, {self.second})"
+```
+
+There are a few differences:
+
+1. We need to declare a type variable first.
+2. We declare that `Pair` is `Generic[T]`, that is has a type variable `T`. Think of *generic* as a *general purpose* version of our class.
+3. We use the variable `T` wherever we would have used `int` or `str` in the previous versions. This will be how the type checker will figure out what constrains the creation of pairs.
+
+To use this *generic* pair we need to tell the type checker what flavour of pair it is by providing a type *argument* for `T`. We do this when we declare a variable (or parameter), with a syntax you are likely familiar with:
+
+
+```python
+point_2d: Pair[int] = Pair(3, 4)
+user_pass: Pair[str] = StrPair("foo", "abc123")
+```
+
+So what would happen if tried the 
+
+```python
+pair1: Pair[int] = Pair(1, "abc")  # error second is a string
+pair2: Pair[str] = Pair(1, "abc")  # error first is an int
+```
+
+Note: this second line gets a slightly different error message in pycharm, but it's fundamentally a violation of the constraint that the two parameters must be strings.
+
+
 
 ## ▶️ Exercises
 
-### `swap()`
+### Generic `Stack` and `Queue`
 
-Recall in sorting we used the idea of a "swap":
+Modify the `IntStack` class or the `IntQueue` class to a make a generic stack or queue. 
 
-```java
- public static void swap(int[] arr, int i, int j) {
-        int holder = arr[j];
-        arr[j] = arr[i];
-        arr[i] = holder;
-    }
+### Generic `Tuple`
+
+Write a generic class with two components that can be of different data types. Hint: a tuple containing a `str` and an `int` would be created with:
+
+```python
+t: Tuple[str, int] = Tuple("abc", 123)
 ```
 
-Issue: if we want to swap double or strings we would require `swap(..)` overloads:
 
-```java
- public static void swap(double[] arr, int i, int j) {
-        double holder = arr[j];
-        arr[j] = arr[i];
-        arr[i] = holder;
-    }
-```
+## Generic functions
 
-and
-
-```java
- public static void swap(String[] arr, int i, int j) {
-        Strinv holder = arr[j];
-        arr[j] = arr[i];
-        arr[i] = holder;
-    }
-```
-
-How about a *generic* method:
-
-```java
- public static <T> void swap(T[] arr, int i, int j) {
-        T holder = arr[j];
-        arr[j] = arr[i];
-        arr[i] = holder;
-    }
-```
+## Exercises
 
 ### `count()`
 
@@ -90,31 +160,6 @@ Code a generic method `count` that takes an array and a value and returns the nu
 
 Are there any method preconditions?
 
-### `Pair`
-
-We'll fill this one in together as a class:
-
-```java
-public class Pair<T> {
-    private T first;
-    private T second;
-
-    public Pair(T first, T second) {
-        this.first = first;
-        this.second = second;
-    }
-}
-```
-
-### `Tuple`
-
-Write a generic class with two components that can be of different datatypes.
-
-Hint: a tuple containing a `String` and an `int` would be created with:
-
-```java
-Tuple<String, Integer> tuple = new Tuple<>("abc", 123);
-```
 
 ### `splitAt()`
 
@@ -132,15 +177,6 @@ zip([a,b,c,d], [e,f,g,h]) = [(a,e), (b,f), (c,g), (d,h)]
 
 Are there any method preconditions?
 
-### Generic Stack
-
-We'll fill this one in together as a class:
-
-```java
-public class Stack<T> {
-    T[] elements;
-}
-```
 
 ### Identifying Type Variables
 
