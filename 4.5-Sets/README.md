@@ -106,14 +106,14 @@ This specification uses a type parameter `T`.
 | Returns      | The method returns `True` if the element is added to the set, and `False` otherwise.                                                                             |
 |              |                                                                                                                                                                  |
 
-| `remove`     |                                                                                                                                                         |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Description  | Remove an element from the set. If there is an element in the set equal to `element`, then it is removed from the set. Otherwise, the set is unchanged. |
-| Signature    | `remove(element: T)`                                                                                                                                    |
-| Precondition | The element to be removed must exist in the set.                                                                                                        |
-| Mutator      | No.                                                                                                                                                     |
-| Returns      |                                                                                                                                                         |
-| Raises       | `KeyError` if element is not in set                                                                                                                     |
+| `remove`     |                                                                                                                                                           |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description  | Remove an element from the set. If there is an element in the set equal to `element`, then it is removed from the set. Otherwise, a `KeyError` is raised. |
+| Signature    | `remove(element: T)`                                                                                                                                      |
+| Precondition | The element to be removed must exist in the set. There must be an agreed upon method to determine the uniqueness of each element.                         |
+| Mutator      | Yes.                                                                                                                                                      |
+| Returns      |                                                                                                                                                           |
+| Raises       | `KeyError` if element is not in set                                                                                                                       |
 
 | `length`     |                                              |
 |--------------|----------------------------------------------|
@@ -149,3 +149,4 @@ This specification uses a type parameter `T`.
 |                | -   the string representations of the elements, comma-separated, and |
 |                | -   a `}`.                                                           |
 
+[Exercise](https://github.com/JAC-CS-Programming-4-W24/Exercise-04.5-UsingSets/blob/main/main.py)
