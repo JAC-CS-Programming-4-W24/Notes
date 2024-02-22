@@ -6,4 +6,6 @@
 - [2. 🌊 Comparable](2-Comparable/ "🌊 Input/Output Streams")
 - [3. Stacks](3-Stacks/)
 - [4. Queues](4-Queues/)
+- [4.3 Traversals](4.3-Traversals/)
+- [4.5 Sets](4.5-Sets/)
 

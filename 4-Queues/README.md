@@ -172,7 +172,7 @@ What if we wanted to add two items?
 
 The beginning of a pattern is starting to emerge.
 
-![Modular circular](./images/modular.svg)
+![Modular circular](./images/Modular.svg)
 
 ### ％ Modulus
 
