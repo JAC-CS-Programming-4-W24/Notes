@@ -8,4 +8,5 @@
 - [4. Queues](4-Queues/)
 - [4.3 Traversals](4.3-Traversals/)
 - [4.5 Sets](4.5-Sets/)
+- [5 Generics](5-Generics/)
 
