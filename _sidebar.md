@@ -9,4 +9,5 @@
 - [4.3 Traversals](4.3-Traversals/)
 - [4.5 Sets](4.5-Sets/)
 - [5 Generics](5-Generics/)
+- [Python OO sytnax](./0-Getting-Started/Python_OO.md)
 

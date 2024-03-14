@@ -161,7 +161,27 @@ print (other.x)	# prints 900 (the class property)
 
 
 
-**Lesson Learned**: Don't use class properties unless you have to, and if you do, capitilize their name so that you *know* that it is a class property and not an instance property.
+**Lesson Learned**: Don't use class properties unless you have to, and if you do, capitilize their name so that you *know* that it is a class property and not an instance property.  NEVER access a class property through an instance, because it is very confusing!
+
+**Properties / Class Properties Search Rule:**
+
+`f = Foo()`.  
+
+`print(f.x)` ?
+
+* if there is an instance property `x`, use that
+* else is there a class property `x`, use that
+* else `error`
+
+`f.y = 3` ?
+
+* if there is no instance property `y`, create it.
+* assign 3 to the instance propery
+* cannot assign to class property this way.
+
+`Foo.y` ?
+
+* always a class variable.
 
 ## Inheritance Syntax
 
@@ -170,25 +190,25 @@ In python (and other languages), we start with a `super` class, not a `base` cla
 To inherit from a super/base class, use the following syntax
 
 ```python
-class Super:
+class Base:
   pass
     
-class SubClass(Super):
+class SubClass(Base):
   pass
 ```
 
 
 
-If no `__init__` is defined for the `SubClass`, then the `__init__` of the `Super` class will be called by default.
+If no `__init__` is defined for the `SubClass`, then the `__init__` of the `Base` class will be called by default.
 
 ```python
-class Super:
+class Base:
   
   def __init__(self):
     self.hello = "hello"
     self.goodbye = "goodbye"
       
-class SubClass(Super):
+class SubClass(Base):
   pass
 
 s = SubClass()
@@ -198,16 +218,16 @@ print(s.goodbye)		# prints goodbye
 
 
 
-If an `__init__` is defined for `SubClass`, then the `Super.__init__` will not be called
+If an `__init__` is defined for `SubClass`, then the `Base.__init__` will not be called
 
 ```python
-class Super:
+class Base:
   
   def __init__(self):
     self.hello = "hello"
     self.goodbye = "goodbye"
       
-class SubClass(Super):
+class SubClass(Base):
   def __init__(self):
     self.hello = "bonjour"
 
@@ -220,13 +240,13 @@ print(s.goodbye)		# AttributeError: 'SubClass' object has no attribute 'goodbye'
 
 What to do?  Call the super class's `__init__` function directly, using `super()` to get the `super object`.
 ```python
-class Super:
+class Base:
   
   def __init__(self):
     self.hello = "hello"
     self.goodbye = "goodbye"
       
-class SubClass(Super):
+class SubClass(Base):
   def __init__(self):
     super().__init__()
     self.hello = "bonjour"
@@ -241,7 +261,7 @@ print(s.goodbye)		# prints goodbye
 Use the same idea for any method
 
 ```python
-class Super:
+class Base:
   def __init__(self):
     self.hello = "hello"
     self.goodbye = "goodbye"
@@ -250,7 +270,7 @@ class Super:
     print(self.hello)
     
 
-class SubClass(Super):
+class SubClass(Base):
   def talk(self):
     print("This is me talking:")
     super().talk()
@@ -272,19 +292,19 @@ f.talk()
 Don't use `type`.  Use `isinstance`.
 
 ```python
-class Super:
+class Base:
 	pass
     
 
-class SubClass(Super):
+class SubClass(Base):
 	pass
 
 
 foo = SubClass()
 
-type(foo) == Super   	  # False
+type(foo) == Base   	  # False
 
-isinstance(foo, Super)	# True
+isinstance(foo, Base)	# True
 
 
 ```
