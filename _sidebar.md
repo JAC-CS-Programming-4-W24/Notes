@@ -11,4 +11,4 @@
 - [5 Generics](5-Generics/)
 - [Python OO syntax](./0-Getting-Started/Python_OO.md)
 - [6 Search](6-Search/)
-- [7 Dictionaries and Hashes](7-Dictionaries_and_Hashes/)
+- [7 Dictionaries and Hashes](./7-Dictionaries_and_Hashes/)
