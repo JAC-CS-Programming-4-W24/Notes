@@ -9,5 +9,6 @@
 - [4.3 Traversals](4.3-Traversals/)
 - [4.5 Sets](4.5-Sets/)
 - [5 Generics](5-Generics/)
-- [Python OO sytnax](./0-Getting-Started/Python_OO.md)
+- [Python OO syntax](./0-Getting-Started/Python_OO.md)
 - [6 Search](6-Search/)
+- [7 Dictionaries and Hashes](7-Dictionaries_and_Hashes/)
